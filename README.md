@@ -180,6 +180,21 @@ Add the following configuration:
 }
 ```
 
+If you are Windows WSL user:
+
+```json
+{
+  "mcpServers": {
+    "bioruby-kegg": {
+			"command": "wsl.exe",
+			"args": [
+				"bioruby-mcp-server"
+			]
+    }
+  }
+}
+```
+
 ##### 3. Restart Claude Desktop
 
 After saving the configuration file, restart Claude Desktop to load the new MCP server.
