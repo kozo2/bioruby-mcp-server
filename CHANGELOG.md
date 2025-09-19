@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release of bioruby-mcp-server
-- Model Context Protocol (MCP) server implementation
+- Model Context Protocol (MCP) server implementation using official MCP Ruby SDK
 - Integration with BioRuby KEGG module
 - KEGG pathway information retrieval (`kegg_pathway_info`)
 - KEGG compound information retrieval (`kegg_compound_info`)
@@ -22,8 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Full documentation and examples
 
 ### Technical Details
-- Built on Ruby 3.0+ with BioRuby foundation
+- Built on Ruby 3.0+ with BioRuby and official MCP Ruby SDK
 - Uses KEGG REST API for data access
-- Follows MCP protocol specification 2024-11-05
+- Follows MCP protocol specification via official SDK
+- Each KEGG operation implemented as MCP::Tool subclass
 - Includes proper error handling and logging
 - Supports filtering and search capabilities
+- Full MCP protocol compliance through SDK

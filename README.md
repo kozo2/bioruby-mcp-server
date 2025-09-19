@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that provides access to BioRuby KEGG functionality. This server allows AI assistants to query KEGG databases for biological pathways, compounds, enzymes, and other molecular information through the standardized MCP protocol.
 
+Built using the official [MCP Ruby SDK](https://github.com/modelcontextprotocol/ruby-sdk).
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -181,8 +183,19 @@ $ bundle exec rubocop
 ## Dependencies
 
 - [bio](https://github.com/bioruby/bioruby) - BioRuby library for biological data processing
-- [json](https://ruby-doc.org/stdlib-3.0.0/libdoc/json/rdoc/JSON.html) - JSON parsing and generation
-- [logger](https://ruby-doc.org/stdlib-3.0.0/libdoc/logger/rdoc/Logger.html) - Logging functionality
+- [mcp](https://github.com/modelcontextprotocol/ruby-sdk) - Official MCP Ruby SDK
+
+## Technical Implementation
+
+This server is built using the official [MCP Ruby SDK](https://github.com/modelcontextprotocol/ruby-sdk), ensuring full compliance with the Model Context Protocol specification. Each KEGG tool is implemented as an `MCP::Tool` subclass, providing proper input schema validation and structured responses.
+
+### Architecture
+
+- **KEGG REST API Integration**: Direct integration with KEGG's REST API for real-time data access
+- **BioRuby Parser Integration**: Uses BioRuby's KEGG parsers for proper data structure handling  
+- **MCP Protocol Compliance**: Built on the official MCP Ruby SDK for standardized protocol handling
+- **Tool-based Architecture**: Each KEGG operation is implemented as a separate MCP tool
+- **Robust Error Handling**: Comprehensive error handling for network issues, invalid IDs, and API failures
 
 ## Contributing
 

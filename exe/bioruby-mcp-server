@@ -3,6 +3,5 @@
 
 require_relative '../lib/bioruby'
 
-# Start the BioRuby MCP Server
-server = BioRuby::MCP::Server::Core.new
-server.start
+# Start the BioRuby MCP Server using the SDK
+BioRuby::MCP::Server::Core.start_stdio_server

@@ -33,8 +33,7 @@ Gem::Specification.new do |spec|
 
   # Dependencies
   spec.add_dependency 'bio', '~> 2.0'
-  spec.add_dependency 'json', '~> 2.0'
-  spec.add_dependency 'logger', '~> 1.0'
+  spec.add_dependency 'mcp', '~> 0.1'
 
   # Development dependencies
   spec.add_development_dependency 'minitest', '~> 5.0'
