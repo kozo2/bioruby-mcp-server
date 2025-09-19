@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/bioruby'
+
+# Start the BioRuby MCP Server using the SDK
+BioRuby::MCP::Server::Core.start_stdio_server
