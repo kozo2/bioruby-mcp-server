@@ -2,7 +2,7 @@
 
 require 'mcp'
 require 'bio'
-require 'net/http'
+require 'open-uri'
 require 'uri'
 
 module BioRuby
@@ -73,9 +73,11 @@ module BioRuby
 
           def kegg_get_entry(entry_id)
             uri = URI("#{KEGG_REST_BASE}/get/#{entry_id}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
@@ -135,9 +137,11 @@ module BioRuby
 
           def kegg_get_entry(entry_id)
             uri = URI("#{KEGG_REST_BASE}/get/#{entry_id}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
@@ -197,9 +201,11 @@ module BioRuby
 
           def kegg_get_entry(entry_id)
             uri = URI("#{KEGG_REST_BASE}/get/#{entry_id}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
@@ -258,9 +264,11 @@ module BioRuby
 
           def kegg_find_entries(database, query)
             uri = URI("#{KEGG_REST_BASE}/find/#{database}/#{query}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
@@ -324,9 +332,11 @@ module BioRuby
 
           def kegg_get_entry(entry_id)
             uri = URI("#{KEGG_REST_BASE}/get/#{entry_id}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
@@ -394,9 +404,11 @@ module BioRuby
 
           def kegg_list_entries(database)
             uri = URI("#{KEGG_REST_BASE}/list/#{database}")
-            response = Net::HTTP.get_response(uri)
-            return nil unless response.code == '200'
-            response.body
+            begin
+              uri.open.read
+            rescue OpenURI::HTTPError
+              nil
+            end
           end
         end
       end
