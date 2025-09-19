@@ -1,0 +1,35 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/vendor/bundle/
+
+# Gem artifacts
+*.gem
+
+# RSpec artifacts
+.rspec_status
+
+# RuboCop artifacts
+.rubocop-https*
+
+# IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/build/
+/dist/
+
+# Log files
+*.log

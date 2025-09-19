@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/bioruby'
+
+# Start the BioRuby MCP Server
+server = BioRuby::MCP::Server::Core.new
+server.start
