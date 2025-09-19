@@ -142,7 +142,75 @@ List available organisms in KEGG.
 
 This MCP server can be used with any AI assistant that supports the Model Context Protocol. Configure your AI assistant to connect to this server to enable KEGG database queries.
 
-#### Example MCP Configuration
+#### Claude Desktop Integration
+
+To connect this server to Claude Desktop, you'll need to configure it in Claude's MCP settings:
+
+##### 1. Install the Server
+
+First, install the bioruby-mcp-server gem:
+
+```bash
+gem install bioruby-mcp-server
+```
+
+##### 2. Configure Claude Desktop
+
+Add the server configuration to Claude Desktop's configuration file:
+
+**On macOS:**
+Edit or create `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+**On Windows:**
+Edit or create `%APPDATA%\Claude\claude_desktop_config.json`
+
+**On Linux:**
+Edit or create `~/.config/Claude/claude_desktop_config.json`
+
+Add the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "bioruby-kegg": {
+      "command": "bioruby-mcp-server",
+      "args": []
+    }
+  }
+}
+```
+
+##### 3. Restart Claude Desktop
+
+After saving the configuration file, restart Claude Desktop to load the new MCP server.
+
+##### 4. Verify Connection
+
+Once connected, you can test the integration by asking Claude to query KEGG databases. For example:
+
+- "Get information about KEGG pathway map00010"
+- "Search for glucose compounds in KEGG"
+- "Find pathways containing compound C00002"
+
+##### Troubleshooting
+
+If the connection fails:
+
+1. **Check gem installation**: Ensure `bioruby-mcp-server` is installed and accessible in your PATH
+   ```bash
+   which bioruby-mcp-server
+   gem list bioruby-mcp-server
+   ```
+
+2. **Verify configuration**: Check that the JSON configuration file is valid and in the correct location
+
+3. **Check permissions**: Ensure Claude Desktop has permission to execute the bioruby-mcp-server command
+
+4. **Review logs**: Check Claude Desktop's logs for any error messages related to MCP server connections
+
+#### General MCP Configuration
+
+For other AI assistants that support MCP, use this general configuration format:
 
 ```json
 {
